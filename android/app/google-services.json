@@ -1,0 +1,206 @@
+{
+  "project_info": {
+    "project_number": "528498767303",
+    "project_id": "flutter-e395f",
+    "storage_bucket": "flutter-e395f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528498767303:android:125da6f599b2c5593ad5e2",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528498767303-1mbqjaci9jq3agn7l2ctuncvcqo3p3pk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app",
+            "certificate_hash": "eb643f48af4f3b2f248e2590a312287d79c1686d"
+          }
+        },
+        {
+          "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKh20cL3UQ-hDdlnVk7oeEZCnVN1XHQ88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528498767303-4oebebop897bctd2a4u09r3oafhgeob9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528498767303:android:019288df50d895683ad5e2",
+        "android_client_info": {
+          "package_name": "com.example.e_bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKh20cL3UQ-hDdlnVk7oeEZCnVN1XHQ88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528498767303-4oebebop897bctd2a4u09r3oafhgeob9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528498767303:android:c8c9e7354e9217df3ad5e2",
+        "android_client_info": {
+          "package_name": "com.example.instagram_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKh20cL3UQ-hDdlnVk7oeEZCnVN1XHQ88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528498767303-4oebebop897bctd2a4u09r3oafhgeob9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528498767303:android:e2cee65c9626e41d3ad5e2",
+        "android_client_info": {
+          "package_name": "com.example.reddit_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528498767303-281gvpubo3p6mm3vjv6dr739u9gcvb9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reddit_clone",
+            "certificate_hash": "d944b97f8fcc6baa5c6e9f1c56d9d20b9e66a86a"
+          }
+        },
+        {
+          "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKh20cL3UQ-hDdlnVk7oeEZCnVN1XHQ88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528498767303-4oebebop897bctd2a4u09r3oafhgeob9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528498767303:android:2418eac697df4e743ad5e2",
+        "android_client_info": {
+          "package_name": "com.example.ulearning_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKh20cL3UQ-hDdlnVk7oeEZCnVN1XHQ88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528498767303-a3tgk3jt5ebfuqjb0cn1thfmrcncnmon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528498767303-4oebebop897bctd2a4u09r3oafhgeob9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
