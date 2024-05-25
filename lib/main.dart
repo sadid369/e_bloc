@@ -13,3 +13,4 @@ void main() async {
   Bloc.observer = BlocEcommerceObserver();
   runApp(const BlocEcommerceApp());
 }
+///section 2 @1:13
