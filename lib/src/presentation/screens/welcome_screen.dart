@@ -3,6 +3,7 @@ import 'package:e_bloc/src/presentation/widgets/app_button.dart';
 import 'package:e_bloc/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
@@ -29,7 +30,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           BlocConsumer<LoginBloc, LoginState>(
-            listener: (context, state) {},
+            listener: (context, state) {
+              if (state is LoginSuccess) {
+                Fluttertoast.showToast(msg: 'Login Success');
+                Future.delayed(
+                  const Duration(seconds: 2),
+                  () {
+                    context.goNamed(Routes.HOME_ROUTE);
+                  },
+                );
+              }
+            },
             builder: (context, state) {
               if (state is LoginLoading) {
                 return const CircularProgressIndicator();
@@ -45,7 +56,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     const Gap(10),
                     SocialLoginButton(
                       buttonType: SocialLoginButtonType.twitter,
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<LoginBloc>().add(RequestTwitterLogin());
+                      },
                     ),
                     const Gap(10),
                     SocialLoginButton(
