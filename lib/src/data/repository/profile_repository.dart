@@ -13,10 +13,10 @@ class ProfileRepository {
           .collection('users')
           .doc(_auth.currentUser!.uid)
           .get();
-
+      debugPrint("userData: ${userData.data()}");
       if (userData.data() != null) {
         user = UserModel.fromMap(userData.data()!);
-        debugPrint("Error signing in with Google: ${user.userName}");
+        debugPrint("fetchUserFromFirestoree: ${user.userName}");
       }
       return user;
     } catch (error) {

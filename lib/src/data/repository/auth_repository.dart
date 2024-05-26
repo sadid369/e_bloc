@@ -75,7 +75,6 @@ class AuthRepository {
       userName: user.displayName!,
       email: user.email!,
       photoUrl: user.photoURL,
-      phoneNumber: user.phoneNumber,
     );
 
     await _firebaseFirestore

@@ -1,5 +1,7 @@
 // import 'package:bloc_ecommerce/src/blocs/authentication/remember_switch_cubit.dart';
 
+import 'package:e_bloc/src/blocs/profile/bloc/profile_bloc.dart';
+import 'package:e_bloc/src/data/repository/profile_repository.dart';
 import 'package:e_bloc/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +19,10 @@ class BlocEcommerceApp extends StatelessWidget {
       providers: [
         RepositoryProvider(
           create: (context) => AuthRepository(),
-        )
+        ),
+        RepositoryProvider(
+          create: (context) => ProfileRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -39,6 +44,12 @@ class BlocEcommerceApp extends StatelessWidget {
           BlocProvider(
             create: (context) {
               return LoginBloc(auth: context.read<AuthRepository>());
+            },
+          ),
+          BlocProvider(
+            create: (context) {
+              return ProfileBloc(
+                  profileRepository: context.read<ProfileRepository>());
             },
           ),
         ],
