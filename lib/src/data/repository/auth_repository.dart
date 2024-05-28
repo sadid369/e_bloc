@@ -30,7 +30,7 @@ class AuthRepository {
           await _auth.signInWithCredential(credential);
       debugPrint('User: ${authResult.user?.email}');
       if (authResult.user != null) {
-        await createUserInDatabase(authResult.user!);
+        await createUserInDatabase(authResult.user!, null);
       }
       return authResult.user;
     } catch (error) {
@@ -70,9 +70,9 @@ class AuthRepository {
     }
   }
 
-  Future<void> createUserInDatabase(User user) async {
+  Future<void> createUserInDatabase(User user, String? username) async {
     final userData = UserModel(
-      userName: user.displayName!,
+      userName: user.displayName ?? username,
       email: user.email!,
       photoUrl: user.photoURL,
     );
@@ -89,5 +89,43 @@ class AuthRepository {
             "User inserted, user name: ${user.displayName} ID: ${user.uid}");
       },
     );
+  }
+
+  Future<void> logout() async {
+    await _auth.signOut();
+  }
+
+  Future<User?> signUpWithEmail(
+      {required String email,
+      required String password,
+      required String username}) async {
+    try {
+      final credential = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      final user = credential.user;
+      if (user != null) {
+        await createUserInDatabase(user, username);
+      }
+      return user;
+    } catch (e) {
+      print(e.toString());
+      throw Exception(e);
+    }
+  }
+
+  Future<User?> signInWithEmail({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final credential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      final user = credential.user;
+
+      return user;
+    } catch (e) {
+      print(e.toString());
+      throw Exception(e);
+    }
   }
 }

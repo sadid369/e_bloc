@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class AppButton extends StatelessWidget {
   final double width;
   final double height;
-  final String text;
+  final Widget? child;
+  final String? text;
   final double? textFontSize;
   final IconData? rightLogo;
   final IconData? leftLogo;
@@ -20,8 +21,9 @@ class AppButton extends StatelessWidget {
     super.key,
     required this.width,
     required this.height,
-    required this.text,
+    this.child,
     this.textFontSize = null,
+    this.text,
     this.logoSize = 0,
     this.rightLogo,
     this.leftLogo,
@@ -61,15 +63,16 @@ class AppButton extends StatelessWidget {
                       leftLogo,
                       size: logoSize,
                     ),
-              Text(
-                textAlign: TextAlign.center,
-                text,
-                style: TextStyle(
-                  fontSize: textFontSize,
-                  color: textColor,
-                  fontWeight: fontWeight,
-                ),
-              ),
+              child ??
+                  Text(
+                    textAlign: TextAlign.center,
+                    text!,
+                    style: TextStyle(
+                      fontSize: textFontSize,
+                      color: textColor,
+                      fontWeight: fontWeight,
+                    ),
+                  ),
               rightLogo == null
                   ? Container()
                   : Icon(

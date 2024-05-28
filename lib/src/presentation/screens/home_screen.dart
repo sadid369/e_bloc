@@ -1,6 +1,10 @@
+import 'package:e_bloc/src/blocs/authentication/login_bloc.dart';
 import 'package:e_bloc/src/blocs/profile/bloc/profile_bloc.dart';
+import 'package:e_bloc/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,7 +23,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          BlocListener<LoginBloc, LoginState>(
+            listener: (context, state) {
+              if (state is LogoutState) {
+                context.go(Routes.WELCOME_ROUTE);
+              }
+              if (state is LogoutFailedState) {
+                Fluttertoast.showToast(msg: state.message);
+              }
+            },
+            child: IconButton(
+                onPressed: () {
+                  context.read<LoginBloc>().add(LogoutEvent());
+                },
+                icon: Icon(
+                  Icons.logout,
+                )),
+          ),
+        ],
+      ),
       body: BlocConsumer<ProfileBloc, ProfileState>(
         listener: (context, state) {},
         builder: (context, state) {

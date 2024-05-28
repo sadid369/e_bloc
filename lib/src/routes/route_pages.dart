@@ -19,7 +19,7 @@ class RoutePages {
           return state.fullPath;
         }
       } else {
-        return Routes.WELCOME_ROUTE;
+        return state.fullPath;
       }
     },
     routes: [

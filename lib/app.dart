@@ -38,7 +38,7 @@ class BlocEcommerceApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) {
-              return SignupBloc();
+              return SignupBloc(auth: context.read<AuthRepository>());
             },
           ),
           BlocProvider(
@@ -49,7 +49,9 @@ class BlocEcommerceApp extends StatelessWidget {
           BlocProvider(
             create: (context) {
               return ProfileBloc(
-                  profileRepository: context.read<ProfileRepository>());
+                profileRepository: context.read<ProfileRepository>(),
+                auth: context.read<AuthRepository>(),
+              );
             },
           ),
         ],

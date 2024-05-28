@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 import 'package:meta/meta.dart';
@@ -17,6 +18,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<RequestGoogleLogin>(_googleLogin);
     on<RequestFacebookLogin>(_facebookLogin);
     on<RequestTwitterLogin>(_twitterLogin);
+    on<RequestEmailLogin>(_requestEmailLogin);
+    on<LogoutEvent>(_logout);
   }
 
   FutureOr<void> _googleLogin(
@@ -45,6 +48,27 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       }
     } catch (e) {
       debugPrint('${e.toString()}');
+    }
+  }
+
+  FutureOr<void> _logout(LogoutEvent event, Emitter<LoginState> emit) async {
+    emit(LoginLoading());
+    try {
+      await auth.logout();
+      emit(LogoutState());
+    } catch (e) {
+      emit(LogoutFailedState(message: e.toString()));
+    }
+  }
+
+  FutureOr<void> _requestEmailLogin(
+      RequestEmailLogin event, Emitter<LoginState> emit) async {
+    emit(LoginLoading());
+    try {
+      await auth.signInWithEmail(email: event.email, password: event.password);
+      emit(LoginSuccess());
+    } catch (e) {
+      emit(LoginFailed(message: e.toString()));
     }
   }
 }

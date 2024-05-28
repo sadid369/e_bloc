@@ -85,7 +85,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(Routes.LOGIN_ROUTE);
+                      },
                       child: Text(
                         'Sign in',
                         style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -102,7 +104,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 text: 'Create an Account',
                 bg: Theme.of(context).colorScheme.onPrimaryContainer,
                 onTap: () {
-                  context.pushNamed(Routes.REGISTER_ROUTE);
+                  context.push(Routes.REGISTER_ROUTE);
                 },
               ),
             ],
