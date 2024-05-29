@@ -167,6 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             RequestEmailLogin(
                               email: state.emailController.text,
                               password: state.passwordController.text,
+                              isRemember: RememberSwitchCubit.isRemember,
                             ),
                           );
                     }

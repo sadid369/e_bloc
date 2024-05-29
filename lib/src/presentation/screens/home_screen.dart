@@ -1,5 +1,6 @@
 import 'package:e_bloc/src/blocs/authentication/login_bloc.dart';
 import 'package:e_bloc/src/blocs/profile/bloc/profile_bloc.dart';
+import 'package:e_bloc/src/data/preference/local_preference.dart';
 import 'package:e_bloc/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,28 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: BlocConsumer<ProfileBloc, ProfileState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          if (state is ProfileFetchedSuccess) {
-            return Column(
-              children: [
-                ListTile(
-                  title: Text('Hello ${state.user?.userName}'),
-                  titleTextStyle:
-                      Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                  subtitle: Text('Welcome to Laza'),
-                  subtitleTextStyle: Theme.of(context).textTheme.labelMedium,
-                )
-              ],
-            );
-          } else if (state is ProfileInitial) {
-            return CircularProgressIndicator();
-          }
-          return Container();
-        },
+      body: Column(
+        children: [
+          ListTile(
+            title: Text('Hello ${LocalPreferences.getString('username')}'),
+            titleTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+            subtitle: Text('Welcome to Laza'),
+            subtitleTextStyle: Theme.of(context).textTheme.labelMedium,
+          )
+        ],
       ),
     );
   }

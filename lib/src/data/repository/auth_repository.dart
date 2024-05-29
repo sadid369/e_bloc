@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_bloc/src/data/model/user_model.dart';
+import 'package:e_bloc/src/data/preference/local_preference.dart';
 import 'package:e_bloc/src/data/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -87,6 +88,12 @@ class AuthRepository {
       (value) {
         debugPrint(
             "User inserted, user name: ${user.displayName} ID: ${user.uid}");
+        LocalPreferences.setString(
+            'username', user.displayName ?? username ?? "unknown");
+        LocalPreferences.setString('email', user.email ?? "");
+        LocalPreferences.setString(
+            'photoUrl', user.photoURL ?? "https://i.sstatic.net/l60Hf.png");
+        LocalPreferences.setString('PhoneNumber', user.phoneNumber ?? "");
       },
     );
   }
@@ -122,6 +129,16 @@ class AuthRepository {
           email: email, password: password);
       final user = credential.user;
 
+      UserModel userModel;
+      DocumentSnapshot data =
+          await _firebaseFirestore.collection('users').doc(user?.uid).get();
+      userModel = UserModel.fromMap(data.data() as Map<String, dynamic>);
+      await LocalPreferences.setString(
+          'username', userModel.userName ?? "unknown");
+      await LocalPreferences.setString('email', user?.email ?? "");
+      await LocalPreferences.setString(
+          'photoUrl', user?.photoURL ?? "https://i.sstatic.net/l60Hf.png");
+      LocalPreferences.setString('PhoneNumber', user?.phoneNumber ?? "");
       return user;
     } catch (e) {
       print(e.toString());

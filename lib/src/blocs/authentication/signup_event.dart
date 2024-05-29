@@ -12,6 +12,7 @@ class RequestEmailSignUp extends SignupEvent {
   final String email;
   final String password;
   final String confirmPassword;
+
   RequestEmailSignUp({
     required this.username,
     required this.email,
